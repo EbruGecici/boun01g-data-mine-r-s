@@ -117,6 +117,10 @@ carmarket = fread("turkey_car_market_EDA.csv")
 carmarket = fread('https://raw.githubusercontent.com/pjournal/boun01g-data-mine-r-s/gh-pages/data.table/turkey_car_market_EDA.csv')
 ```
 
+```{r}
+carmarket %>%
+  glimpse()
+```
 
 ### 2.1 Time Series Analyses
 
