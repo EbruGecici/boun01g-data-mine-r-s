@@ -42,13 +42,13 @@ body {
  
 </style>
 
-## TURKEY CAR MARKET 2020
+# TURKEY CAR MARKET 2020
 
 ## 1. Introduction
 
 ### 1.1 Turkey Online Car Market 2020
 
-The dataset used in this project belongs to a website in Turkey which makes online buying and selling of cars advertised in 2020. It is called **Turkey Car Market 2020** and downloaded from [Kaggle](https://www.kaggle.com/alpertemel/turkey-car-market-2020). The dataset contains information about features of cars which has been filled by sellers. The missing features of cars in the dataset are written as "Don't Know". In order to overcome the rows with missing values, a preprocessing of data is conducted and can be seen in [Preprocessing Section](https://pjournal.github.io/boun01g-data-mine-r-s/Project/Preprocessing.html) for detailed explanations. This section also includes some accuracy checks of the data, and explanations od the variables. 
+The dataset used in this project belongs to a website in Turkey which makes online buying and selling of cars advertised in 2020. It is called **Turkey Car Market 2020** and downloaded from [Kaggle](https://www.kaggle.com/alpertemel/turkey-car-market-2020). The dataset contains information about features of cars which has been filled by sellers. The missing features of cars in the dataset are written as "Don't Know". In order to overcome the rows with missing values, a preprocessing of data is conducted and can be seen in [Preprocessing Section](https://pjournal.github.io/boun01g-data-mine-r-s/Project/Preprocessing.html) for detailed explanations. This section also includes some accuracy checks of the data, and explanations od the variables.
 
 ```{r, echo=FALSE}
 # Define variable containing url
@@ -79,6 +79,7 @@ The packages used during the project can be listed as below:
 
 1. tidyverse
 2. lubridate
+3. tm
 4. knitr
 5. tinytex
 6. data table 
@@ -88,13 +89,14 @@ The packages used during the project can be listed as below:
 
 ```{r packages, message=FALSE, warning=FALSE}
 #Required packages
-pti <- c("data.table", "tidyverse", "knitr", "tinytex", "scales", "kableExtra")
+pti <- c("data.table", "tidyverse", "tm", "knitr", "tinytex", "scales")
 pti <- pti[!(pti %in% installed.packages())]
 if(length(pti)>0){
     install.packages(pti)
 }
 
 library(tidyverse)
+library(tm)
 library(knitr)
 library(tinytex)
 library(data.table)
@@ -107,12 +109,12 @@ library(kableExtra)
 Before making any further analysis, we need to import the data that we pre-processed the data.The pre-processing report file link is given above. 
 
 ```{r data from local, include=FALSE}
-carmarket = readRDS("turkey_car_market_EDA")
+carmarket = fread("turkey_car_market_EDA.csv")
 ```
 
 ```{r data from url, eval = FALSE}
 #data uploading
-carmarket = readRDS(gzcon(url("https://github.com/pjournal/boun01g-data-mine-r-s/blob/gh-pages/Project/turkey_car_market_EDA?raw=true")))
+carmarket = fread('https://raw.githubusercontent.com/pjournal/boun01g-data-mine-r-s/gh-pages/data.table/turkey_car_market_EDA.csv')
 ```
 
 
