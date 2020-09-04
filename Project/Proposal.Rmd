@@ -3,19 +3,42 @@ title: "Project Proposal"
 author: "Data Mine'R's"
 output: 
   html_document:
-    css: style.css
-    toc: true
+    code_folding: hide
+    toc: yes
     toc_depth: 3
     toc_float:
-      collapsed: true
-      smooth_scroll: false
+      collapsed: no
+    theme: united
+    highlight: tango
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
 date: "`r format(Sys.time(), '%d %B %Y')`"
 ---
+<style>
+#TOC {
+ color: 
+ font-family: Calibri;
+ background-color:
+ border-color: darkred;
+}
+#header {
+ color: darkred;
+ font-family: Calibri;
+ background-color:
+}
+body {
+ font-family: Calibri;
+ }
+ 
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 ```
+
+
 
 ## Group Members
 
