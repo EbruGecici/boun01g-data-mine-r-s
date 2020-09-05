@@ -569,3 +569,5 @@ For the analysis, you can follow this [link](https://pjournal.github.io/boun01g-
 ## References
 
 1. [Mode Function](https://acadgild.com/blog/55690-2#:~:text=In%20R%2C%20there%20are%20no,created%20the%20function(x))
+
+A
